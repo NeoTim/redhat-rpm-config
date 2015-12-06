@@ -7,7 +7,7 @@
 Summary: Red Hat specific rpm configuration files
 Name: redhat-rpm-config
 Version: 37
-Release: 1%{?dist}
+Release: 2%{?dist}
 # No version specified.
 License: GPL+
 Group: Development/System
@@ -36,6 +36,7 @@ Source151: macros.kmp
 # Build policy scripts
 Source201: brp-implant-ident-static
 Source202: brp-java-repack-jars
+Source203: brp-restore-timestamps
 
 # Dependency generator scripts (deprecated)
 Source300: find-provides
@@ -136,6 +137,9 @@ install -p -m 755 -t %{buildroot}%{_rpmconfigdir} kmod.prov
 %{_rpmconfigdir}/macros.d/macros.kmp
 
 %changelog
+* Sun Dec  6 2015 Dhiru Kholia <dhiru@openwall.com> 37-2
+- Add brp-restore-timestamps script for reproducible builds
+
 * Wed Dec  2 2015 Peter Robinson <pbrobinson@fedoraproject.org> 37-1
 - nodejs 4+ now supports aarch64 and power64
 

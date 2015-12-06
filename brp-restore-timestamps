@@ -1,0 +1,4 @@
+#!/bin/sh
+
+find "$RPM_BUILD_ROOT" -exec touch -d @"$RPM_CHANGELOG_DATE" {} \;
+find "$RPM_BUILD_ROOT" -exec ls -la {} \;
